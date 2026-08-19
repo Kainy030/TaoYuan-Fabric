@@ -77,8 +77,26 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
+	// Produce a javadoc jar alongside the mod and sources jars, so a tagged release
+	// carries the API documentation as well.
+	withJavadocJar()
+
 	sourceCompatibility = JavaVersion.VERSION_21
 	targetCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.withType(Javadoc).configureEach {
+	// Same reasoning as the JavaCompile encoding above: the sources contain non-ASCII
+	// text (e.g. "招灾"), and javadoc otherwise reads and writes them using the platform
+	// charset, which mangles them on a zh-CN Windows install.
+	options.encoding = "UTF-8"
+	options.charSet = "UTF-8"
+	options.docEncoding = "UTF-8"
+
+	// The javadoc here is written for readers of the source, not as a published API
+	// contract, so it deliberately omits @param/@return on self-explanatory members.
+	// doclint would fail the build over exactly that.
+	options.addStringOption("Xdoclint:none", "-quiet")
 }
 
 jar {
