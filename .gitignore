@@ -1,0 +1,51 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# Redirected gradle build logs (see the org.gradle.console note in
+# gradle.properties); these are local scratch output, not project files.
+_*.log
+
+# project tooling
+
+# One-off scripts used to generate the mod's PNG assets. The generated PNGs are
+# committed; the generators themselves are not part of the build.
+make-icon.ps1
+make-item-texture.ps1

@@ -1,0 +1,21 @@
+{
+  "itemGroup.taoyuan": "桃源",
+  "item.taoyuan.taoyuan_flower": "终焉之花",
+  "item.taoyuan.taoyuan_flower.lore": "很久很久以前...这里还叫做桃源...",
+  "effect.taoyuan.calamity_bringer": "招灾",
+  "hud.taoyuan.calamity_indicator": "招灾指示器：%s 秒",
+  "hud.taoyuan.calamity_indicator.idle": "招灾指示器：未激活",
+  "hud.taoyuan.calamity_indicator.disabled": "招灾指示器：已关闭[招灾计数器≥10次]",
+  "hud.taoyuan.calamity_counter": "招灾计数器：%s 次",
+  "message.taoyuan.calamity_counter_changed": "招灾计数器：%d → %d",
+  "message.taoyuan.sky_terror": "%s：这里...这里好高...这么高怎么办...小说主角也没有在这么高的地方存活下来的机会吧...我不会摔死吧...",
+  "message.taoyuan.seven_sword": "%s：这里...这里好黑...我从小就怕黑...黑暗里会有未知的东西出现...黑暗里会不会有我自己幻想出来的七黑剑？被七黑剑裁定善之人赏纹银七两，被七黑剑裁定极善之人赏一锭金元宝，被七黑剑裁定大奸大恶之人被七黑剑贯穿丹田，可我此生从未做过善事，我会死的，我绝对会被七黑剑贯穿丹田而死的。",
+  "death.attack.taoyuan.sky_terror": "%s 在高空坠落，摔死在地面上。",
+  "death.attack.taoyuan.seven_sword": "%s被七黑剑贯穿了丹田。",
+  "message.taoyuan.judgment_echo": "我听到了招灾的回响。",
+  "message.taoyuan.judgment_summon": "招灾者召唤了七黑剑，七黑剑将审判所有人。",
+  "message.taoyuan.scapegoat_echo": "我听到了替罪的回响。",
+  "message.taoyuan.scapegoat_puppet": "一丝蕴含着替罪仙法的人偶替你扛下了七黑剑的审判",
+  "message.taoyuan.god_does_not_die": "神明不会枉死。",
+  "message.taoyuan.sword_cannot_judge_god": "七黑剑无法审判神明"
+}

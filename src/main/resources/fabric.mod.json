@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "taoyuan",
+	"version": "${version}",
+	"name": "TaoYuan",
+	"description": "A Minecraft mod inspired by the Chinese web novel Ten Days Till End.\n\nThis mod brings elements from Ten Days Till End into Minecraft, including various items, artifacts, mechanics, and worldbuilding concepts inspired by the original work.\n\nExplore a Minecraft world shaped by the unique atmosphere and lore of Ten Days Till End, encounter familiar concepts, and experience the story's distinctive blend of mystery, survival, and the supernatural.\n\nThis mod is a fan-made adaptation and is not affiliated with or endorsed by the original author or copyright holders.",
+	"authors": [
+		"Kainy"
+	],
+	"contact": {
+		"homepage": "https://github.com/Kainy030/TaoYuan-Fabric",
+		"sources": "https://github.com/Kainy030/TaoYuan-Fabric",
+		"issues": "https://github.com/Kainy030/TaoYuan-Fabric/issues"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/taoyuan/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.taoyuan.TaoYuanMod"
+		],
+		"client": [
+			"com.taoyuan.client.TaoYuanModClient"
+		]
+	},
+	"mixins": [
+		"taoyuan.mixins.json",
+		{
+			"config": "taoyuan.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

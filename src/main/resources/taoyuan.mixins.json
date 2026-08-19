@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.taoyuan.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"CombatTrackerMixin",
+		"TaoYuanMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

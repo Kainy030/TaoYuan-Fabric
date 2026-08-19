@@ -1,0 +1,21 @@
+{
+  "itemGroup.taoyuan": "TaoYuan",
+  "item.taoyuan.taoyuan_flower": "TheEndFlower",
+  "item.taoyuan.taoyuan_flower.lore": "Long ago... this place was known as TaoYuan...",
+  "effect.taoyuan.calamity_bringer": "Calamity Bringer",
+  "hud.taoyuan.calamity_indicator": "Calamity Indicator: %ss",
+  "hud.taoyuan.calamity_indicator.idle": "Calamity Indicator: --",
+  "hud.taoyuan.calamity_indicator.disabled": "Calamity Indicator: OFF [Calamity Counter over 10]",
+  "hud.taoyuan.calamity_counter": "Calamity Counter: %s",
+  "message.taoyuan.calamity_counter_changed": "Calamity Counter: %d -> %d",
+  "message.taoyuan.sky_terror": "%s: Here... it's so high up... what am I supposed to do this high up... even the protagonist of a novel would never survive a place this high... I won't die from the fall, will I...?",
+  "message.taoyuan.seven_sword": "%s: Here... it's so dark... I've been afraid of the dark since I was a child... unknown things appear in the dark... will the seven-sword I imagined show up in the dark? The seven-sword rewards the good with seven taels of silver, the supremely good with a whole gold ingot, the great evildoers are pierced through the dantian. But I have never once done a good deed in my life -- I will die, I will surely be pierced through the dantian by the seven-sword.",
+  "death.attack.taoyuan.sky_terror": "%s was found splattered on the ground far below.",
+  "death.attack.taoyuan.seven_sword": "%s was pierced through the dantian by the seven-sword.",
+  "message.taoyuan.judgment_echo": "I heard the echo of the calamity.",
+  "message.taoyuan.judgment_summon": "The calamity-bringer has summoned the seven-sword. The seven-sword will judge everyone.",
+  "message.taoyuan.scapegoat_echo": "I heard the echo of the scapegoat.",
+  "message.taoyuan.scapegoat_puppet": "A puppet imbued with a strand of scapegoat sorcery bore the seven-sword's judgment in your place",
+  "message.taoyuan.god_does_not_die": "A god does not die in vain.",
+  "message.taoyuan.sword_cannot_judge_god": "The seven-sword cannot judge a god"
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Development-only Log4j2 configuration.
+
+	This is Loom's default dev config with ANSI colour codes removed from the console
+	pattern, so `gradlew runClient` output stays readable when piped or redirected
+	(IntelliJ's Run window renders colours through its own mechanism regardless).
+
+	Offline-account authentication noise is NOT filtered here. It is prevented at the
+	source by the "offlineDeveloperMode" program argument set in build.gradle, which is
+	vanilla's own developer switch. That way genuine errors are never hidden.
+
+	Wired up in build.gradle via: loom.log4jConfigs.from "log4j-dev.xml"
+-->
+<Configuration status="WARN">
+	<Appenders>
+		<!-- Console: no ANSI, so output stays readable when piped or redirected. -->
+		<Console name="SysOut" target="SYSTEM_OUT">
+			<PatternLayout>
+				<LoggerNamePatternSelector defaultPattern="[%d{HH:mm:ss}] [%t/%level] (%logger{1}) %msg{nolookups}%n">
+					<!-- Don't show the logger name for Minecraft classes -->
+					<PatternMatch key="net.minecraft.,com.mojang." pattern="[%d{HH:mm:ss}] [%t/%level] (Minecraft) %msg{nolookups}%n"/>
+				</LoggerNamePatternSelector>
+			</PatternLayout>
+		</Console>
+
+		<!-- Vanilla server gui -->
+		<Queue name="ServerGuiConsole" ignoreExceptions="true">
+			<PatternLayout>
+				<LoggerNamePatternSelector defaultPattern="[%d{HH:mm:ss} %level] (%logger{1}) %msg{nolookups}%n">
+					<PatternMatch key="net.minecraft.,com.mojang." pattern="[%d{HH:mm:ss} %level] %msg{nolookups}%n"/>
+				</LoggerNamePatternSelector>
+			</PatternLayout>
+		</Queue>
+
+		<!-- latest.log, same as vanilla -->
+		<RollingRandomAccessFile name="LatestFile" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout>
+				<LoggerNamePatternSelector defaultPattern="[%d{HH:mm:ss}] [%t/%level] (%logger{1}) %msg{nolookups}%n">
+					<PatternMatch key="net.minecraft.,com.mojang." pattern="[%d{HH:mm:ss}] [%t/%level] (Minecraft) %msg{nolookups}%n"/>
+				</LoggerNamePatternSelector>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<OnStartupTriggeringPolicy />
+			</Policies>
+		</RollingRandomAccessFile>
+
+		<!-- Debug log file -->
+		<RollingRandomAccessFile name="DebugFile" fileName="logs/debug.log" filePattern="logs/debug-%i.log.gz">
+			<PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level] (%logger) %msg{nolookups}%n" />
+			<!-- Keep 5 files max -->
+			<DefaultRolloverStrategy max="5" fileIndex="min"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="200MB"/>
+				<OnStartupTriggeringPolicy />
+			</Policies>
+		</RollingRandomAccessFile>
+	</Appenders>
+
+	<Loggers>
+		<Logger level="${sys:fabric.log.level:-info}" name="net.minecraft"/>
+
+		<Root level="${sys:fabric.log.debug.level:-debug}">
+			<AppenderRef ref="DebugFile" level="${sys:fabric.log.debug.level:-debug}"/>
+			<AppenderRef ref="SysOut" level="${sys:fabric.log.level:-info}"/>
+			<AppenderRef ref="LatestFile" level="${sys:fabric.log.level:-info}"/>
+			<AppenderRef ref="ServerGuiConsole" level="${sys:fabric.log.level:-info}"/>
+		</Root>
+	</Loggers>
+</Configuration>
